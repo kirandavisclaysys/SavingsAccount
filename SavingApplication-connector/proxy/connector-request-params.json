@@ -1,0 +1,115 @@
+{
+  "connectorParameters": [
+    {
+      "name": "localStorageUrl",
+      "value": "https://coastalservicesdev.us-e1.cloudhub.io"
+    },
+    {
+      "name": "localStorageApiKey",
+      "value": "82ED6E4A-7A41-4A53-9970-8F7377AB4125"
+    },
+    {
+      "name": "bookappApiUrl", 
+      "value": "https://demo.consumer.meridianlink.com/Services/BookApp/BookApp.aspx"
+    },
+    {
+      "name": "depositRateChangesApiurl", 
+      "value": "https://demo.consumer.meridianlink.com/services/ssfcu/ProductRetrieval.aspx"
+    },
+    {
+      "name": "generatePDFApiUrl",
+      "value": "https://demo.consumer.meridianlink.com/services/docs/generatepdfs/generatepdfs.aspx"
+    },
+    {
+      "name": "bookappApiUserIdBase64", 
+      "value": "MDA1NWRkNzEtZDQ5ZC00ZjA5LWJlN2UtNDdmYzlkNDIyY2Rh"
+    },
+    {
+      "name": "bookappApiPasswordBase64", 
+      "value": "SHc3eCleeCleNUJoQDEyLnhQRnp1OUNLcXZIIW9PX3dFcS0sY1NM"
+    },
+    {
+      "name": "meridianLinkApiUrl",
+      "value": "https://demo.consumer.meridianlink.com/Services/DecisionXA/DecisionXA.aspx"
+    },
+    {
+      "name": "meridianLinkApiUserIdBase64",
+      "value": "MDA1NWRkNzEtZDQ5ZC00ZjA5LWJlN2UtNDdmYzlkNDIyY2Rh"
+    },
+    {
+      "name": "meridianLinkApiPasswordBase64",
+      "value": "SHc3eCleeCleNUJoQDEyLnhQRnp1OUNLcXZIIW9PX3dFcS0sY1NM"
+    },
+    {
+      "name": "generatePDFApiUserIdBase64", 
+      "value": "MDA1NWRkNzEtZDQ5ZC00ZjA5LWJlN2UtNDdmYzlkNDIyY2Rh"
+    },
+    {
+      "name": "generatePDFApiPasswordBase64", 
+      "value": "SHc3eCleeCleNUJoQDEyLnhQRnp1OUNLcXZIIW9PX3dFcS0sY1NM"
+    },
+    {
+      "name": "DepositLenderID",
+      "value": "36ac233dc6a442a088937dee93ba6275"
+    },    
+    {
+      "name": "organizationID",
+      "value": "CFCU120621O"
+    },
+    {
+      "name": "ExternalSource", 
+      "value": "Combined Share Tile"
+    },
+    {
+      "name": "lenderID", 
+      "value": "coastal1"
+    },
+    {
+      "name": "mlConnectorName",
+      "value": "savingsApplicationapp"
+    },
+    {
+      "name": "saveTo",
+      "value": "ARCHIVED"
+    },
+    {
+      "name": "pdfCode",
+      "value": "DSCFM0"
+    },
+    {
+      "name": "returnPdf",
+      "value": "false"
+    },
+    {
+      "name": "declinedReApplyDays",
+      "value": "1"
+    },
+    {
+      "name": "reApplyDays",
+      "value": "1"
+    },
+    {
+      "name": "mlConnectorVersion",
+      "value": "2.0"
+    },
+    {
+      "name": "TierProductCodes",
+      "value": "S102"
+    },
+    {
+      "name": "citizenshipStatus1",
+      "value": "USCITIZEN"
+    },
+    {
+      "name": "citizenshipStatus2",
+      "value": "PERMANENTRESIDENT"
+    },
+    {
+      "name": "citizenshipStatus3",
+      "value": "NONPERMRESIDENT"
+    }
+  ],
+  "userData": {
+    "userId": "1142468"
+  }
+}

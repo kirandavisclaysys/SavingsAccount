@@ -1,0 +1,15 @@
+{
+  "name": "connector-proxy-server",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "http-proxy": " 1.18.0",
+    "log-timestamp": "0.3.0",
+    "morgan": "1.9.1",
+    "request": "2.88.0"
+  },
+  "scripts": {},
+  "devDependencies": {}
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<INPUT>
+  <LOGIN api_password="${meridianLinkApiPassword}" api_user_id="${meridianLinkApiUserId}" />
+  <REQUEST  credit_pull_option = "ALWAYS" skip_product_underwriting="false" skip_product_selection="true" action_type="NEW">
+        <XA_CLF>
+            <![CDATA[
+            <XPRESS_LOAN
+            xmlns="http://www.meridianlink.com/CLF" version="5.155">
+<APPLICANTS>
+  <APPLICANT cell_phone="${userWorkPhone!""}" home_phone="${userHomePhone!""}" first_name="${userFirstName!""}" last_name="${userLastName!""}" middle_name="${userMiddleName!""}" dob="${dob!""}" email="${primaryEmail}" ssn="${ssn?replace("-", "")}" work_phone="${userWorkPhone!""}" member_number = "${userId!""}">
+    <CURRENT_ADDRESS occupancy_status="OTHER" occupancy_duration="24">
+      <LOOSE_ADDRESS city="${userAddressCity}" state="${userAddressState}" zip="${userAddressZip}" county="" street_address_1="${userAddressline1}" street_address_2="${userAddressline2}" country="" >    
+      </LOOSE_ADDRESS>    
+      </CURRENT_ADDRESS>
+  <MAILING_ADDRESS />
+  <#if "${IsEmployee}" == "true">
+  <FINANCIAL_INFO employment_status="OT" occupation="OTHER" employee_of_lender_type="EMPLOYEE"/>
+  <#else>
+  <FINANCIAL_INFO employment_status="OT" occupation="OTHER"/>
+  </#if>
+  <ID_CARD />
+  <#if "${IsJoint}" == "true">
+    <SPOUSE cell_phone= "" home_phone="${jointuserHomePhone!""}" first_name="${jointuserFirstName!""}" last_name="${jointuserLastName!""}" middle_name="${jointuserMiddleName!""}" dob="${jointdob!""}" email="${jointprimaryEmail}" ssn="${jointssn?replace("-", "")}" citizenship="${formattedjointcitizenShip!""}" work_phone="" member_number = "" >
+      <CURRENT_ADDRESS occupancy_status="OTHER" occupancy_duration="24" >
+      <#if "${isJointApplicantAddressSame}" == "true">
+        <LOOSE_ADDRESS city="${userAddressCity}" state="${userAddressState}" zip="${userAddressZip}"  street_address_1="${userAddressline1}" street_address_2="${userAddressline2}" country="" />  
+      <#else>  
+        <LOOSE_ADDRESS city="${jointuserAddressCity}" state="${jointuserAddressState}" zip="${jointuserAddressZip}"  street_address_1="${jointuserAddressline1}" street_address_2="${jointuserAddressline2}" country="" />
+      </#if>
+        </CURRENT_ADDRESS>   
+    <MAILING_ADDRESS />
+    <#if "${JointIsEmployee}" == "true">
+    <FINANCIAL_INFO employment_status="${jointuseremploymentStatus!"OT"}" employer="${jointuserEmployer!""}" occupation="${jointuserProfession!""}" employed_months= "${(convertedjointemployedMonths * 12)?c!"0"}" employee_of_lender_type="EMPLOYEE"/>
+    <#else>
+    <FINANCIAL_INFO employment_status="${jointuseremploymentStatus!"OT"}" employer="${jointuserEmployer!""}" occupation="${jointuserProfession!""}" employed_months= "${(convertedjointemployedMonths * 12)?c!"0"}" />
+    </#if>
+    <ID_CARD card_type="${jointusercardType!""}" card_number="${jointusercardNumber!""}" state="${jointuserstate!""}" country="${jointusercountry!""}" exp_date="${jointuserexpiryDate!""}" date_issued="${jointuserdateIssued!""}" />
+    </SPOUSE>
+  </#if>
+  </APPLICANT>
+</APPLICANTS>
+<COMMENTS>
+  <INTERNAL_COMMENTS> ${disclosureComment!""}
+  </INTERNAL_COMMENTS>
+</COMMENTS>
+<#if approvalDate??>
+<LOAN_INFO   status="APPROVED" account_position="2" entity_type="P" approval_date="${approvalDate!""}"/>
+<#else>
+<LOAN_INFO   status="APPROVED" account_position="2" entity_type="P"/>
+</#if>
+<SYSTEM type="LPQ" external_source="${ExternalSource!""}"><BRANCH code="${BranchCode!""}"/><LENDER reference_id="${lenderID}" /><ORGANIZATION reference_id="${organizationID}"/>
+  </SYSTEM>
+  <APPROVED_ACCOUNTS>
+    <ACCOUNT_TYPE account_name="${accountName}"
+                funding_date="${currentDate}"
+                issue_date="${currentDate}"
+                funded_status="FUN"
+                source_of_funds="CASH"                
+                account_type="CHECKING"                
+                product_code="${productCode}">
+            <#if "${IsJoint}" == "true">
+            <ACCOUNT_TYPE_RELATIONS>
+                <RELATION benefactor_type="J" ssn="${jointssn?replace("-", "")}" />
+            </ACCOUNT_TYPE_RELATIONS>
+            </#if>
+    </ACCOUNT_TYPE>
+</APPROVED_ACCOUNTS>
+</XPRESS_LOAN>
+]]>
+</XA_CLF>
+</REQUEST>
+</INPUT>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<INPUT>
+   <LOGIN>
+      <API_CREDENTIALS api_user_id="${generatePDFApiUserId}" api_password="${generatePDFApiPassword}" />
+   </LOGIN>
+   <REQUEST save_to="${saveTo}" return_pdf="${returnPdf}" target_applicant_ssn="${ssn!""}" >
+      <APP_INFO>
+            <APP_ID>${expressAppid}</APP_ID>
+      </APP_INFO>
+      <DOCUMENT pdf_code="${pdfCode}"/>
+   </REQUEST>
+</INPUT>

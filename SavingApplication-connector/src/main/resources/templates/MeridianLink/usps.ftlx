@@ -1,0 +1,11 @@
+<AddressValidateRequest USERID="${userId}">
+  <Revision>${Revision}</Revision>
+  <Address ID="${id}">
+    <Address1>${Address2!""}</Address1>
+    <Address2>${Address1!""}</Address2>
+    <City>${city}</City>
+    <State>${state}</State>
+    <Zip5>${zip5}</Zip5>
+    <Zip4/>
+  </Address>
+</AddressValidateRequest>

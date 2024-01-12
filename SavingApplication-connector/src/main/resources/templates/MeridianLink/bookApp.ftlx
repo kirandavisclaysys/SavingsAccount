@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<INPUT>
+   <LOGIN>
+      <API_CREDENTIALS api_user_id="${bookappApiUserId}" api_password="${bookappApiPassword}" />
+   </LOGIN>
+   <REQUEST integration_type="SYMITAR">
+      <BOOK_XA_APP>
+         <APPLICATION>
+            <EXISTING_APP app_id="${expressAppid}" app_type="XA" />
+         </APPLICATION>
+      </BOOK_XA_APP>
+   </REQUEST>
+</INPUT>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<INPUT>
+    <LOGIN api_password="${getLoansApiPassword}" api_user_id="${getLoansApiUserId}"/>
+    <REQUEST>
+        <LOAN loan_id="${expressAppid}"/>
+    </REQUEST>
+</INPUT>
